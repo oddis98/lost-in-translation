@@ -1,0 +1,37 @@
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  padding: 3rem;
+  color: var(--primary-text);
+  font-family: "Love Ya Like a sister";
+}
+
+.logoDiv {
+  position: relative;
+  display: inline-block;
+  padding-right: 5rem;
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 3rem;
+  width: 16rem;
+}
+
+.svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.subHeaderText {
+  font-size: 3rem;
+}
+
+.subSubHeaderText {
+  font-size: 2.5rem;
+}
