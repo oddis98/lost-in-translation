@@ -1,7 +1,7 @@
 import Header from "../components/Header/Header";
 import Login from "../components/Login/Login";
 
-const LoginPage = () => {
+const LoginPage = (props) => {
   return (
     <>
       <div className="header">

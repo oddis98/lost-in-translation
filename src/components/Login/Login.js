@@ -3,18 +3,26 @@ import { useState } from "react";
 import { LoginAPI } from "../../api/LoginAPI";
 import ArrowForward from "@mui/icons-material/ArrowForward";
 import SportsEsportsOutlinedIcon from "@mui/icons-material/SportsEsportsOutlined";
+import { useDispatch } from "react-redux";
+import { loginAttemptAction } from "../../store/actions/loginActions";
 
 const Login = () => {
-  const [input, setInput] = useState();
+  const [input, setInput] = useState("");
+
+  const dispatch = useDispatch();
 
   const onInputChange = (e) => {
     setInput(e.target.value);
   };
 
+  const onButtonClick = () => {
+    dispatch(loginAttemptAction(input));
+  };
+
   const tryLogin = async () => {
     try {
       const user = await LoginAPI.login({ username: input });
-      if (user.length === "0") {
+      if (user.length === 0) {
         await LoginAPI.register({ username: input });
         const newUser = await LoginAPI.login({ username: input });
         return newUser[0];
@@ -37,7 +45,7 @@ const Login = () => {
               onChange={onInputChange}
             />
 
-            <button className="btn-login" onClick={tryLogin}>
+            <button className="btn-login" onClick={onButtonClick}>
               <ArrowForward />
             </button>
           </div>
