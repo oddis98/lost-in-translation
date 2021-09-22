@@ -14,6 +14,9 @@ export const loginMiddleware =
 
     if (action.type === ACTION_LOGIN_ATTEMPTING) {
       try {
+        if (action.payload === "") {
+          throw new Error("Can't be empty string");
+        }
         const user = await LoginAPI.login({ username: action.payload });
         if (user.length === 0) {
           await LoginAPI.register({ username: action.payload });

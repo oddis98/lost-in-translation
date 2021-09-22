@@ -1,10 +1,11 @@
 import "./login.css";
-import { useState } from "react";
-import { LoginAPI } from "../../api/LoginAPI";
+import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import ArrowForward from "@mui/icons-material/ArrowForward";
 import SportsEsportsOutlinedIcon from "@mui/icons-material/SportsEsportsOutlined";
 import { useDispatch, useSelector } from "react-redux";
 import { loginAttemptAction } from "../../store/actions/loginActions";
+import { sessionSetAction } from "../../store/actions/sessionActions";
 
 const Login = () => {
   const [input, setInput] = useState("");
@@ -14,6 +15,8 @@ const Login = () => {
     (state) => state.loginReducer
   );
 
+  const history = useHistory();
+
   const onInputChange = (e) => {
     setInput(e.target.value);
   };
@@ -21,6 +24,13 @@ const Login = () => {
   const onButtonClick = () => {
     dispatch(loginAttemptAction(input));
   };
+
+  useEffect(() => {
+    if (user !== "") {
+      dispatch(sessionSetAction(user));
+      history.push("/translations");
+    }
+  }, [user]);
 
   return (
     <>
