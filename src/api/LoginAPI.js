@@ -53,4 +53,28 @@ export const LoginAPI = {
       console.error(error);
     }
   },
+
+  async updateTranslations(userId, translations) {
+    const requestOptions = {
+      method: "PATCH",
+      headers: {
+        "X-API-Key": API_KEY,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        translations: translations,
+      }),
+    };
+    try {
+      const response = await fetch(
+        `${API_URL}/translations/${userId}`,
+        requestOptions
+      );
+      if (!response.ok) {
+        throw new Error("Could not update translation");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  },
 };

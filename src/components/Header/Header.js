@@ -1,12 +1,12 @@
-import "./header.css";
+import styles from "./header.module.css";
 import Image from "../../assets/Logo-Hello.png";
 
 const Header = () => {
   return (
-    <div className="headerContainer">
-      <div className="logoDiv">
+    <div className={styles.headerContainer}>
+      <div className={styles.logoDiv}>
         <svg
-          className="svg"
+          className={styles.svg}
           width="295"
           height="223"
           viewBox="0 0 295 223"
@@ -18,12 +18,12 @@ const Header = () => {
             fill="white"
           />
         </svg>
-        <img className="logo" src={Image} alt="happy robot" />
+        <img className={styles.logo} src={Image} alt="happy robot" />
       </div>
 
       <div>
-        <h1 className="subHeaderText">Lost in Translation</h1>
-        <p className="subSubHeaderText">Get Started</p>
+        <h1 className={styles.subHeaderText}>Lost in Translation</h1>
+        <p className={styles.subSubHeaderText}>Get Started</p>
       </div>
     </div>
   );

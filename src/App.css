@@ -11,17 +11,3 @@
   --secondary-color: #845ec2;
   --primary-text: #ffffff;
 }
-
-.header {
-  height: 5rem;
-  background: var(--primary-color);
-  display: flex;
-  align-items: center;
-  border-bottom: 2px solid #00000010;
-}
-
-.headerText {
-  color: var(--primary-text);
-  margin-left: 2rem;
-  font-family: "Love Ya Like a sister";
-}
