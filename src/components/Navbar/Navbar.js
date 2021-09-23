@@ -1,14 +1,17 @@
-import { useSelector } from "react-redux";
-import AccountCircleTwoToneIcon from "@mui/icons-material/AccountCircleTwoTone";
-import styles from "./navbar.module.css";
-import { useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
+import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
+import styles from './navbar.module.css';
+import { useHistory } from 'react-router-dom';
+import { translateClearAction } from '../../store/actions/translateActions';
 
 const Navbar = (props) => {
   const { username } = useSelector((state) => state.sessionReducer);
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const redirect = () => {
-    history.push("/profile");
+    dispatch(translateClearAction());
+    history.push('/profile');
   };
 
   return (

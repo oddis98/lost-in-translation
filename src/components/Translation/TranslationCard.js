@@ -1,14 +1,16 @@
-import styles from "./translation.module.css";
-import { useSelector } from "react-redux";
+import styles from './translation.module.css';
+import { useSelector } from 'react-redux';
 
 const TranslationCard = (props) => {
   const { translation } = useSelector((state) => state.translateReducer);
+  const regex = /[a-z]/;
+
   return (
     <div className={styles.innerContainer}>
       <div className={styles.card}>
         <ul>
           {[...translation].map((char, index) => {
-            if (char === " ") {
+            if (!regex.test(char)) {
               return <span></span>;
             }
             return (

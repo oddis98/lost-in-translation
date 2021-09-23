@@ -3,12 +3,12 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  min-height: 50vh;
+  min-height: 70vh;
   background: var(--primary-color);
 }
 .card {
   width: 80vw;
-  height: 25rem;
+  height: 35rem;
   border-radius: 0.5rem 0.5rem 0 0;
   background: #ffffff;
   display: flex;
@@ -31,6 +31,28 @@
   margin-left: 1rem;
   font-size: 12px;
   cursor: default;
+  margin-right: 1rem;
+  border: none;
+  cursor: pointer;
+}
+.return {
+  flex: 1;
+}
+.translations {
+  list-style: none;
+  font-size: 24px;
+}
+.translationsContainer {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 5rem;
+  padding: 1rem;
+  align-items: center;
+  border-bottom: 1px solid #000000;
+}
+.lastTranslations {
+  padding-top: 0.5rem;
 }
 .innerContainer {
   box-shadow: 0 0 10px #4e4d3a;
@@ -42,5 +64,5 @@
   color: #00000054;
 }
 .username {
-  font-size: 24px;
+  font-size: 30px;
 }

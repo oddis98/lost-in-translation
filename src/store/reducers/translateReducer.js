@@ -1,7 +1,10 @@
-import { ACTION_TRANSLATE_SET } from "../actions/translateActions";
+import {
+  ACTION_TRANSLATE_CLEAR,
+  ACTION_TRANSLATE_SET
+} from '../actions/translateActions';
 
 const initialState = {
-  translation: [],
+  translation: []
 };
 
 export const translateReducer = (state = initialState, action) => {
@@ -9,7 +12,11 @@ export const translateReducer = (state = initialState, action) => {
     case ACTION_TRANSLATE_SET:
       return {
         ...state,
-        translation: action.payload,
+        translation: action.payload
+      };
+    case ACTION_TRANSLATE_CLEAR:
+      return {
+        ...initialState
       };
     default:
       return state;

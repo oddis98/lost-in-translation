@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Lost in Translation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This application was created during Noroff's Accelerated program. It is an application for converting wirtten language into American sign language
 
-## Available Scripts
+## Component Tree
 
-In the project directory, you can run:
+![component tree](componentTree.PNG)
 
-### `yarn start`
+The application is divided into four parts
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Login Page
+- Translations Page
+- Profile Page
+- API
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Login Page
 
-### `yarn test`
+Login page takes an input from a user and tries to log in to our API. If it fails it will register the user and log them in.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The logged in user gets stored in the browser session.
 
-### `yarn build`
+Once a successful login occurs the user is sent to the translation page.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Translation Page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The translation page takes an input from the user and translates the string into sign language and displays the corresponding images on the screen.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Each translation gets sent to the API and saved, the session is then updated from the API.
 
-### `yarn eject`
+## Profile Page
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The profile page shows the logged in user as well as their 10 most recent translations.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+There is three buttons on the page.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Clear translations - deletes the translations from the API and the session.
+- Translate - takes the user back to the translation page.
+- Log out - deletes the session and sends the user to the login page
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## API
 
-## Learn More
+We used a JSON server to store our data. Click [here](https://noroff-api-oddalm.herokuapp.com/).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+In our API we have three HTTP request actions.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Login (GET) - logs the user in
+- Register (POST) - register a new user in the database
+- updateTranslations (PATCH) - updates the translations for the logged in user

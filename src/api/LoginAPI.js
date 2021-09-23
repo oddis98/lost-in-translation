@@ -1,6 +1,6 @@
 const API_KEY =
-  "qculjKQjXUX0uauq3T98kX4iDInwsNI3E0gvJffCy5WJa8GXRVbMLyd8aGaYqsAd";
-const API_URL = "https://noroff-api-oddalm.herokuapp.com";
+  'qculjKQjXUX0uauq3T98kX4iDInwsNI3E0gvJffCy5WJa8GXRVbMLyd8aGaYqsAd';
+const API_URL = 'https://noroff-api-oddalm.herokuapp.com';
 
 export const LoginAPI = {
   /**
@@ -15,7 +15,7 @@ export const LoginAPI = {
       );
 
       if (!user.ok) {
-        throw new Error("Could not retrieve user");
+        throw new Error('Could not retrieve user');
       }
       return await user.json();
     } catch (error) {
@@ -30,22 +30,22 @@ export const LoginAPI = {
    */
   async register(details) {
     const requestOptions = {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "X-API-Key": API_KEY,
-        "Content-Type": "application/json",
+        'X-API-Key': API_KEY,
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         username: details.username,
-        translations: [],
-      }),
+        translations: []
+      })
     };
 
     try {
       const user = await fetch(`${API_URL}/translations`, requestOptions);
 
       if (!user.ok) {
-        throw new Error("Could not create new user.");
+        throw new Error('Could not create new user.');
       }
 
       return await user.json();
@@ -56,14 +56,14 @@ export const LoginAPI = {
 
   async updateTranslations(userId, translations) {
     const requestOptions = {
-      method: "PATCH",
+      method: 'PATCH',
       headers: {
-        "X-API-Key": API_KEY,
-        "Content-Type": "application/json",
+        'X-API-Key': API_KEY,
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        translations: translations,
-      }),
+        translations: translations
+      })
     };
     try {
       const response = await fetch(
@@ -71,10 +71,10 @@ export const LoginAPI = {
         requestOptions
       );
       if (!response.ok) {
-        throw new Error("Could not update translation");
+        throw new Error('Could not update translation');
       }
     } catch (error) {
       console.error(error);
     }
-  },
+  }
 };
