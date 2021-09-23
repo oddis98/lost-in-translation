@@ -12,7 +12,7 @@ const Profile = () => {
       <div className={styles.innerContainer}>
         <div className={styles.card}>
           <AccountCircleTwoToneIcon className={styles.profilePic} />
-          <h4>{username}</h4>
+          <h4 className={styles.username}>{username}</h4>
           <ul>
             {translations.map((translation, index) => {
               return <li key={index}>{translation}</li>;

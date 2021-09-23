@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 50vh;
+  min-height: 50vh;
   background: var(--primary-color);
 }
 .card {
@@ -37,6 +37,10 @@
   border-radius: 0.5rem;
 }
 .profilePic {
-  font-size: 12rem;
+  transform: scale(6);
+  margin: 4rem;
   color: #00000054;
+}
+.username {
+  font-size: 24px;
 }
