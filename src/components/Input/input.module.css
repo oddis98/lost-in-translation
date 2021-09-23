@@ -1,0 +1,48 @@
+.outerContainer {
+  box-shadow: 0 0 10px #4e4d3a;
+  border-radius: 0.5rem;
+  background: var(--primary-text);
+}
+
+.container {
+  border-radius: 0.5rem 0.5rem 0 0;
+  padding: 1rem;
+}
+
+.purpleDiv {
+  width: 100%;
+  height: 1rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  background: var(--secondary-color);
+}
+
+.inputContainer {
+  border-radius: 2rem;
+  border: 1px solid #000000;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  width: 48rem;
+}
+
+.input {
+  height: 3rem;
+  border-radius: 1rem;
+  border: none;
+  padding: 0 0.8rem;
+  flex: 1;
+  font-size: 2rem;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.btnLogin {
+  border-radius: 50%;
+  padding: 0.5rem;
+  border: none;
+  color: var(--primary-text);
+  background: var(--secondary-color);
+  cursor: pointer;
+}
