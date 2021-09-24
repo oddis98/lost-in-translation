@@ -3,4 +3,8 @@
   font-size: 24px;
   font-family: "Love Ya Like a sister";
   color: var(--primary-text);
+  font-weight: 900;
+}
+.error {
+  color: rgb(255, 28, 28);
 }

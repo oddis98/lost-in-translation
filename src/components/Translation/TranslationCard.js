@@ -1,18 +1,28 @@
-import styles from './translation.module.css';
-import { useSelector } from 'react-redux';
+import styles from "./translation.module.css";
+import { useSelector } from "react-redux";
 
-const TranslationCard = (props) => {
+/**
+ * @returns a card with the translated word in sign language.
+ */
+const TranslationCard = () => {
+  // Implements translation from redux store.
   const { translation } = useSelector((state) => state.translateReducer);
   const regex = /[a-z]/;
+
+  // Removes punctuation, spaces, and special characters from the word-to-be-translated (translation)
+  const stripWord = () => {
+    return [...translation].filter((letter) => {
+      if (regex.test(letter)) {
+        return letter;
+      }
+    });
+  };
 
   return (
     <div className={styles.innerContainer}>
       <div className={styles.card}>
         <ul>
-          {[...translation].map((char, index) => {
-            if (!regex.test(char)) {
-              return <span></span>;
-            }
+          {stripWord().map((char, index) => {
             return (
               <img
                 key={index}

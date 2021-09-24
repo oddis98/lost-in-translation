@@ -13,6 +13,15 @@ export const translateMiddleware =
   async (action) => {
     next(action);
 
+    /**
+     * Gets session from localStorage.
+     * Updates the translations for the currently logged in user in the databse with the values from the session.translations array
+     * and includes a new translation to be added.
+     *
+     * Gets the user with the updated values for translation from the database, and then updates the session with that user.
+     *
+     * If an error occurs dispatch translateErrorAction
+     */
     if (action.type === ACTION_TRANSLATE_SET) {
       try {
         const storedSession = localStorage.getItem("lit-ss");
@@ -28,6 +37,16 @@ export const translateMiddleware =
         dispatch(translateErrorAction(action.payload));
       }
     }
+
+    /**
+     * Gets session form localStorage.
+     *
+     * Updates the translations for the logged in user to be an empty array.
+     *
+     * Gets the user from the database and updates session to include the new (empty) array from the database.
+     *
+     * If an error occurs dispatch translateErrorAction
+     */
     if (action.type === ACTION_TRANSLATE_DELETE) {
       try {
         const storedSession = localStorage.getItem("lit-ss");

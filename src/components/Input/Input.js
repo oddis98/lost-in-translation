@@ -2,6 +2,11 @@ import SportsEsportsOutlinedIcon from "@mui/icons-material/SportsEsportsOutlined
 import ArrowForward from "@mui/icons-material/ArrowForward";
 import styles from "./input.module.css";
 
+/**
+ *
+ * @param {*} props props passed from parent element. (placeholder, onInputChange, onButtonChange)
+ * @returns A nice input with a button and an icon.
+ */
 const Input = (props) => {
   return (
     <div className={styles.outerContainer}>

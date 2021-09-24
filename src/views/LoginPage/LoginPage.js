@@ -3,7 +3,10 @@ import Login from "../../components/Login/Login";
 import Navbar from "../../components/Navbar/Navbar";
 import styles from "./loginPage.module.css";
 
-const LoginPage = (props) => {
+/**
+ * @returns a navbar component and a div containing a header component and a login component.
+ */
+const LoginPage = () => {
   return (
     <>
       <Navbar />

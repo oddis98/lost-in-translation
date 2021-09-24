@@ -1,6 +1,10 @@
 import styles from "./header.module.css";
 import Image from "../../assets/Logo-Hello.png";
 
+/**
+ *
+ * @returns A header for the login page, that includes the cute robot image.
+ */
 const Header = () => {
   return (
     <div className={styles.headerContainer}>

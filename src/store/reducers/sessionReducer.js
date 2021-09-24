@@ -1,5 +1,6 @@
 import {
   ACTION_SESSION_DELETE,
+  ACTION_SESSION_INIT,
   ACTION_SESSION_SET,
 } from "../actions/sessionActions";
 
@@ -20,6 +21,10 @@ export const sessionReducer = (state = initialState, action) => {
     case ACTION_SESSION_DELETE:
       return {
         ...initialState,
+      };
+    case ACTION_SESSION_INIT:
+      return {
+        ...state,
       };
     default:
       return state;

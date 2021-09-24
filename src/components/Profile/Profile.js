@@ -5,23 +5,28 @@ import { useHistory } from "react-router-dom";
 import { sessionDeleteAction } from "../../store/actions/sessionActions";
 import { translateDeleteAction } from "../../store/actions/translateActions";
 
+/**
+ * @returns a div containing the profile image, username, and the users 10 most recent translations.
+ */
 const Profile = () => {
+  // Implements some values from redux store, and utilizes the useDispatch and useHistory hooks.
   const { username, translations } = useSelector(
     (state) => state.sessionReducer
   );
-
   const dispatch = useDispatch();
-
   const history = useHistory();
 
+  // Dispatches the sessionDeleteAction.
   const onLogOutButtonClick = () => {
     dispatch(sessionDeleteAction());
   };
 
+  // Dispatches the translateDeleteAction.
   const onClearButtonClick = () => {
     dispatch(translateDeleteAction());
   };
 
+  // Sends the user to the translations page.
   const onReturnButtonClick = () => {
     history.push("/translations");
   };

@@ -11,6 +11,14 @@ export const loginMiddleware =
   async (action) => {
     next(action);
 
+    /**
+     * If action.type is ACTION_LOGIN_ATTEMPTING
+     * If the payload is empty, throw error.
+     *
+     * Try to login to the API (GET User). If there is no user found, register the user and then log the user in.
+     * Returns dispatches loginSuccessAction on newUser[0] if newly registered or user[0] if already in database.
+     * If this fails, dispatch loginErrorAction
+     */
     if (action.type === ACTION_LOGIN_ATTEMPTING) {
       try {
         if (action.payload === "") {
