@@ -21,10 +21,11 @@ const TranslationCard = () => {
   return (
     <div className={styles.innerContainer}>
       <div className={styles.card}>
-        <ul>
+        <ul className={styles.ul}>
           {stripWord().map((char, index) => {
             return (
               <img
+                className={styles.image}
                 key={index}
                 src={`/individial_signs/${char}.png`}
                 alt={char}

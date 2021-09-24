@@ -35,3 +35,12 @@
 .subSubHeaderText {
   font-size: 2.5rem;
 }
+
+@media screen and (max-width: 890px) {
+  .headerContainer {
+    flex-direction: column;
+  }
+  .logoDiv {
+    padding: 0;
+  }
+}

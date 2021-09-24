@@ -46,3 +46,15 @@
   background: var(--secondary-color);
   cursor: pointer;
 }
+
+@media screen and (max-width: 890px) {
+  .inputContainer {
+    width: auto;
+  }
+  .input {
+    font-size: 1rem;
+  }
+  .outerContainer {
+    margin-top: 2rem;
+  }
+}

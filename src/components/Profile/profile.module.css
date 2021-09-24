@@ -66,3 +66,24 @@
 .username {
   font-size: 30px;
 }
+
+@media screen and (max-width: 890px) {
+  .innerContainer {
+    margin: 2rem 0;
+  }
+  .translationsContainer {
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+  .return {
+    flex: none;
+  }
+  .purpleDiv {
+    height: 8rem;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .translateTag {
+    width: 8rem;
+  }
+}

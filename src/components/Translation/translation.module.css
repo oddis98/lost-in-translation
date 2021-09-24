@@ -34,3 +34,21 @@
   box-shadow: 0 0 10px #4e4d3a;
   border-radius: 0.5rem;
 }
+.image {
+  transform: scale(0.8);
+}
+
+@media screen and (max-width: 890px) {
+  .image {
+    transform: scale(0.5);
+  }
+  .card {
+    padding: 0;
+  }
+  .ul {
+    overflow-wrap: break-word;
+  }
+  .innerContainer {
+    margin: 2rem 0;
+  }
+}
