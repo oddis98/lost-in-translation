@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { loginAttemptAction } from "../../store/actions/loginActions";
+import {
+  loginAttemptAction,
+  loginDeleteAction,
+} from "../../store/actions/loginActions";
 import { sessionSetAction } from "../../store/actions/sessionActions";
 import Input from "../Input/Input";
 import styles from "./login.module.css";
@@ -32,6 +35,7 @@ const Login = () => {
     }
     if (user !== "") {
       dispatch(sessionSetAction(user));
+      dispatch(loginDeleteAction());
       history.push("/translations");
     }
   }, [username, user]);

@@ -1,9 +1,9 @@
-import styles from './profile.module.css';
-import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import { sessionDeleteAction } from '../../store/actions/sessionActions';
-import { translateDeleteAction } from '../../store/actions/translateActions';
+import styles from "./profile.module.css";
+import AccountCircleTwoToneIcon from "@mui/icons-material/AccountCircleTwoTone";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { sessionDeleteAction } from "../../store/actions/sessionActions";
+import { translateDeleteAction } from "../../store/actions/translateActions";
 
 const Profile = () => {
   const { username, translations } = useSelector(
@@ -23,7 +23,7 @@ const Profile = () => {
   };
 
   const onReturnButtonClick = () => {
-    history.push('/translations');
+    history.push("/translations");
   };
 
   return (

@@ -1,5 +1,6 @@
 import {
   ACTION_LOGIN_ATTEMPTING,
+  ACTION_LOGIN_DELETE,
   ACTION_LOGIN_ERROR,
   ACTION_LOGIN_SUCCESS,
 } from "../actions/loginActions";
@@ -29,6 +30,10 @@ export const loginReducer = (state = initialState, action) => {
         ...state,
         loginAttempting: false,
         loginError: action.payload,
+      };
+    case ACTION_LOGIN_DELETE:
+      return {
+        ...initialState,
       };
     default:
       return state;

@@ -1,13 +1,13 @@
 import {
   ACTION_SESSION_DELETE,
-  ACTION_SESSION_SET
-} from '../actions/sessionActions';
+  ACTION_SESSION_SET,
+} from "../actions/sessionActions";
 
 const initialState = {
-  username: '',
-  id: '',
+  username: "",
+  id: "",
   translations: [],
-  loggedIn: false
+  loggedIn: false,
 };
 
 export const sessionReducer = (state = initialState, action) => {
@@ -15,11 +15,11 @@ export const sessionReducer = (state = initialState, action) => {
     case ACTION_SESSION_SET:
       return {
         ...action.payload,
-        loggedIn: true
+        loggedIn: true,
       };
     case ACTION_SESSION_DELETE:
       return {
-        ...initialState
+        ...initialState,
       };
     default:
       return state;

@@ -1,7 +1,6 @@
 import { LoginAPI } from "../../api/LoginAPI";
 import {
   ACTION_LOGIN_ATTEMPTING,
-  ACTION_LOGIN_SUCCESS,
   loginErrorAction,
   loginSuccessAction,
 } from "../actions/loginActions";
@@ -27,9 +26,5 @@ export const loginMiddleware =
       } catch (e) {
         dispatch(loginErrorAction(e.message));
       }
-    }
-
-    if (action.type === ACTION_LOGIN_SUCCESS) {
-      console.log(action.payload);
     }
   };
