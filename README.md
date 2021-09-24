@@ -1,6 +1,8 @@
 # Lost in Translation
 
-This application was created during Noroff's Accelerated program. It is an application for converting wirtten language into American sign language
+This application was created during Noroff's Accelerated program. It is an application for converting wirtten language into American sign language.
+
+Test the app [here](https://lost-in-translation-app-noroff.herokuapp.com)
 
 ## Component Tree
 
